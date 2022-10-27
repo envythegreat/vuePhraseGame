@@ -1,9 +1,10 @@
 <template>
-  <div class="game-start">
-    <div><h2>Game Ready</h2></div>
+  <div id="overlay" class="start">
+    <div ><h2 class="title">Game Ready</h2></div>
     <div>
-      <button @click="$emit('changeStatus')">Start</button>
+      <button id="btn__reset" @click="$emit('changeStatus')" >Start</button>
     </div>
+ 
   </div>
 </template>
 
