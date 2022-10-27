@@ -4,7 +4,11 @@
       <li
         v-for="letter in store.getters.getOneQuote"
         :key="letter + Math.random(Date() * 9)"
-        :class="letter === ' ' ? 'space' : `hide letter ${letter}`"
+        :class="
+          letter === ' '
+            ? 'space'
+            : `letter ${letter} ${store.state.currentLetter.includes(letter) ? 'show' : 'hide'}`
+        "
       >
         {{ letter }}
       </li>
@@ -17,9 +21,9 @@ import { useStore } from '@nuxtjs/composition-api'
 export default {
   setup() {
     const store = useStore()
-
     return {
       store,
+      
     }
   },
 }

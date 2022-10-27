@@ -1,8 +1,8 @@
 <template>
   <div id="overlay" class="start">
-    <div ><h2 class="title">Game Ready</h2></div>
+    <div ><h2 class="title">{{text}}</h2></div>
     <div>
-      <button id="btn__reset" @click="$emit('changeStatus')" >Start</button>
+      <button id="btn__reset" @click="$emit('changeStatus')" >{{btnText}}</button>
     </div>
  
   </div>
@@ -10,6 +10,16 @@
 
 <script>
 export default {
+  props: {
+    text : {
+      type:String,
+      default : 'Game Ready'
+    },
+    btnText : {
+      type:String,
+      default : 'Start'
+    }
+  },
   emits : ['changeStatus']
 }
 </script>
