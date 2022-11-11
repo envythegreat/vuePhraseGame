@@ -65,8 +65,7 @@ export default {
         removeDuplicatAndSpace(store.state.activePhrase).length ===
           store.state.currentLetter.length
       ) {
-        store.dispatch('setGameStatus', 'GameWon')
-        
+        store.dispatch('setGameStatus', 'GameWon') 
       }
     })
 
